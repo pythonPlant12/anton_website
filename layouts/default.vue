@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="border-gray-400">
       <!-- ! Navigation Bar MOBILE-->
       <div class="container">
         <nav class="nav">
@@ -29,23 +29,24 @@
             <li class="nav-item">
               <a href="#" class="nav-link"></a>
             </li>
+            
             <li class="nav-item">
-              <a href="#" class="nav-link">Mac</a>
+              <a href="#" class="nav-link nav-link-mobile">Mac</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">iPad</a>
+              <a href="#" class="nav-link nav-link-mobile">iPad</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">iPhone</a>
+              <a href="#" class="nav-link nav-link-mobile">iPhone</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Watch</a>
+              <a href="#" class="nav-link nav-link-mobile">Watch</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">TV</a>
+              <a href="#" class="nav-link nav-link-mobile">TV</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Support</a>
+              <a href="#" class="nav-link nav-link-mobile">Support</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link nav-link-search"></a>
@@ -75,8 +76,9 @@
     z-index: 14;
     width: 100%;
     height: 4.4rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(248, 248, 248, 0.5);
     backdrop-filter: blur(2rem);
+    border-bottom-width: 1px;
   }
   
   .nav-list {
@@ -93,7 +95,8 @@
   
   .nav-link {
     font-size: 1.4rem;
-    color: #fff;
+    color: #5f5a5a;
+    width: 100%;
     padding: 0 1rem;
     transition: opacity 0.5s;
   }
@@ -121,6 +124,8 @@
     height: 4.4rem;
     background: url("~/assets/css/icons/bag.svg") center no-repeat;
   }
+
+
   
   @media screen and (max-width: 1068px) {
     .hero {
@@ -129,6 +134,7 @@
       background-position: bottom center;
       background-repeat: no-repeat;
     }
+    
     header {
       display: block; /* Use flexbox */
     }
@@ -162,6 +168,7 @@
   
     header .container {
       padding: 0;
+      
     }
   
     .iphone-11-pro {
@@ -181,7 +188,15 @@
       height: 4.8rem;
       display: flex;
       justify-content: center;
+      
     }
+
+    .nav-link-mobile {
+      padding-bottom: 8px;
+      border-bottom-width: 2px;
+      border-color: #2a2a2a10;
+    }
+    
     .nav-item-hidden {
       display: none;
     }
@@ -204,7 +219,8 @@
       position: absolute;
       width: 1.7rem;
       height: 1px;
-      background-color: #fff;
+      background-color: #413f3f;
+      color: #413f3f;
       transition: margin-top 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
     }
   
@@ -229,8 +245,8 @@
   
     header.active {
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(2rem);
+      background-color: rgba(244, 239, 239, 1);
+      backdrop-filter: blur(1rem);
     }
   
     .nav-link-apple {
@@ -280,7 +296,7 @@
     .nav-list-larger .nav-item {
       width: 100%;
       justify-content: flex-start;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 4px solid rgba(255, 255, 255, 0.1);
     }
     .nav-list-larger .nav-item:nth-child(9) {
       border-bottom: none;
