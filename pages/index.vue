@@ -1,32 +1,11 @@
 <template>
-	<!-- <div class="w-screen h-screen flex justify-center items-center">
-    <img class="w-full h-full object-cover" src="" alt="Our company's truck.">
-  </div> -->
-
-	<!-- ---------------------------------------------------------------------- -->
-	<!-- <div class="relative w-screen h-screen flex justify-center items-center">
-  <img class="w-full h-full object-cover" src="your-image.jpg" alt="Your Image Description">
-  <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl">
-    <span class="color-transition">Y</span>
-    <span class="color-transition">o</span>
-    <span class="color-transition">u</span>
-    <span class="color-transition">r</span>
-    <span class="color-transition">T</span>
-    <span class="color-transition">e</span>
-    <span class="color-transition">x</span>
-    <span class="color-transition">t</span>
-  </h1>
-</div> -->
-
-	<!-- ---------------------------------------------------------------------- -->
 	<div class="relative w-screen h-screen flex justify-center items-center">
 		<img
 			class="w-full h-full object-cover"
 			src="../assets/css/images/main-truck.jpg"
-			alt="Your Image Description"
+			alt="Main image with truck"
 		/>
 		<div
-			id="changing-text"
 			class="mt-64 sm:mt-48 absolute flex top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl text-white transition-colors duration-1000"
 		>
 			<NuxtLink to="/"
@@ -37,7 +16,7 @@
 					'grey-text': currentIndex === index,
           'opacity': main
 				}"
-        class="text-4xl"
+        class="text-4xl sm:text-6xl 2xl:text-8xl 2xl:mt-36"
 				>{{ span }}
         </NuxtLink>
 		</div>
@@ -75,19 +54,7 @@
 </style>
 
 <script>
-// const spans = document.querySelectorAll(".color-transition");
-// let currentIndex = 0;
 
-// function toggleGreyColor() {
-// 	spans[currentIndex].style.color = "grey"; // Set the color to grey
-// 	setTimeout(() => {
-// 		spans[currentIndex].style.color = ""; // Reset the color to default
-// 		currentIndex = (currentIndex + 1) % spans.length; // Move to the next span
-// 		toggleGreyColor(); // Repeat the process for the next span
-// 	}, 5000); // Wait for 5 seconds before toggling the next span
-// }
-
-// toggleGreyColor(); // Start the process
 export default {
 	data() {
 		return {
@@ -97,13 +64,6 @@ export default {
 		};
 	},
 	methods: {
-		// toggleGreyColor() {
-		// 	this.currentIndex = (this.currentIndex + 1) % this.spans.length;
-		// 	setTimeout(() => {
-		// 		this.toggleGreyColor();
-		// 	}, 300); // Wait for 5 seconds before toggling the next span
-		// },
-
 		toggleGreyColor() {
 			if (this.currentIndex < this.spans.length) {
 				this.currentIndex++;
