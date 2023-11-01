@@ -14,9 +14,8 @@
 				:class="{
 					'color-transition': true,
 					'grey-text': currentIndex === index,
-          'opacity': main
 				}"
-        class="text-4xl sm:text-6xl 2xl:text-8xl 2xl:mt-36"
+        class="appearOnStart text-4xl sm:text-6xl 2xl:text-8xl 2xl:mt-36 opacity-0 transition-opacity duration-1000 ease-in-out"
 				>{{ span }}
         </NuxtLink>
 		</div>
@@ -49,7 +48,16 @@
 	}
 }
 .grey-text {
-	color: #afb4bd;
+	color: #9ea3ab;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.appearOnStart {
+  animation: fadeIn 1s ease-in-out 1s forwards;
 }
 </style>
 
@@ -72,23 +80,19 @@ export default {
 				this.currentIndex = -1;
 				setTimeout(() => {
 					this.toggleGreyColor(); // Start the process again
-				}, 5000); // Wait for 5 seconds before starting again
+				}, 3000); // Wait for 5 seconds before starting again
 				return;
 			}
 
 			setTimeout(() => {
 				this.toggleGreyColor(); // Continue processing the next span
-			}, 150); // Wait for 0.5 seconds before toggling the next span
+			}, 200); // Wait for 0.5 seconds before toggling the next span
 		},
-    toggleAppearingHeading() {
-      
-    }
 
   },
 
 		mounted() {
 			this.toggleGreyColor(); // Start the process when the component is mounted
-      this.toggleAppearingHeading()
 		},
 };
 </script>
